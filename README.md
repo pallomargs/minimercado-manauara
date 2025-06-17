@@ -33,6 +33,6 @@ Este projeto apresenta um site responsivo que permite ao usuário:
 - **JavaScript (ES6)**  
 
 ## Como Executar Localmente
-1. Faça clone deste repositório:
+1. Faça clone deste repositório: https://github.com/pallomargs/minimercado-manauara.git
 
-2. Para visualizar, abara o site:
+2. Para visualizar, abara o site: 
