@@ -1,111 +1,170 @@
+<!--
+  Arquivo: detalheproduto.html
+  Projeto: Minimercado Manauara – Fase 2
+  Descrição: Página de detalhe do produto com foto, descrição, contagem do número de produto e botão de compra.
+  Autor: Palloma Rodrigues
+  Data: 16/06/2025
+-->
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Açaí - Minimercado Manauara</title>
-</head>
-<body>
+  <title>Detalhe do Produto - Minimercado Manauara</title>
 
+  <!-- Bootstrap Local -->
+  <link rel="stylesheet" href="CSS/css_bootstrap/bootstrap.min.css">
+  <!-- Estilo personalizado -->
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+  <!--Acessibilidade: Navegação por teclado-->
+  <a href="#mainContent" class="visually-hidden-focusable">Pular para o conteúdo</a>
+  
   <!-- Cabeçalho -->
-  <header>
-    <h1>Minimercado Manauara</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="produtos.html">Produtos</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="sobre.html">Sobre Nós</a></li>
+  <header class="d-flex flex-column align-items-center p-3 bg-primary text-white">
+    <img src="Imagens/logo2.png" alt="Logotipo do Minimercado Manauara com texto em verde e marrom e fruta estilizada à direita" class="img-fluid" style="max-width:300px;">
+    <nav class="mt-2">
+      <ul class="list-unstyled d-flex gap-3">
+        <li><a href="index.html" class="text-white">Home</a></li>
+        <li><a href="produtos.html" class="text-white">Produtos</a></li>
+        <li><a href="servicos.html" class="text-white">Serviços</a></li>
+        <li><a href="sobre.html" class="text-white">Sobre Nós</a></li>
+        <li><a href="cadastro.html" class="text-white">Cadastro</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Detalhe do Produto -->
-  <main>
-    <section>
-      <h2>Detalhe do Produto</h2>
-      <img src="Imagens/acai.jpg" width="200" height="200" alt="Polpa de Açaí">
-      <h3><strong>Açaí - Polpa Congelada</strong></h3>
-      <p><strong>Categoria:</strong> Frutas </p>
-      <p><strong>Embalagem:</strong> 1 litro</p>
-      <p><strong>Preço:</strong> R$ 15,00</p>
-       
-      <!-- Descrição -->
-      <p>
-        Polpa de açaí 100% natural, ideal para consumir com granola ou bater vitaminas.
-        Produto fresco, congelado, sem adição de açúcar, direto da região Norte.
-      </p>
-      
-      <!-- Controle de quantidade -->
-      <p>Quantidade:</p>
-      <p>
-        <button>-</button>
-        1
-        <button>+</button>
-      </p>
+  <main class="container my-5">
+    <div class="row g-5 align-items-start">
+      <!-- Imagem grande -->
+      <div class="col-md-5">
+        <img src="Imagens/acai.jpg" class="img-fluid rounded" alt="Taças de açaí natural em tigelas de madeira e colher com pó de açaí sobre esteira de palha">
+      </div>
 
-      <!-- Botões de ação -->
-      <p><button>Adicionar ao Carrinho</button></p>
-      <p><button>Comprar Agora</button></p>
-     
-    </section>
+      <!-- Informações -->
+      <div class="col-md-7">
+        <h2 class="mb-3">Açaí - Polpa Congelada</h2>
 
-    <br><br><br>
+        <!-- Avaliação -->
+        <div class="mb-4">
+          <span class="text-warning">★★★★★</span>
+          <small class="text-muted">(10 avaliações)</small>
+        </div>
 
-    <!-- Produtos semelhantes -->
-    <section>
-      <h3>Produtos Semelhantes</h3>
-      <table>
-        <tr>
-          <td>
-            <img src="Imagens/tucuma.jpg" width="150" height="150" alt="Tucumã"><br>
-            <p>Tucumã</p>
-            <small>R$ 12,00</small>
-          </td>
-          <td>
-            <img src="Imagens/bare.png" width="150" height="150" alt="Guaraná Baré"><br>
-            <p>Guaraná Baré</p>
-            <small>R$ 6,00</small>
-          </td>
-          <td>
-            <img src="Imagens/uarini.jpeg" width="150" height="150" alt="Farinha do Uarini"><br>
-            <p>Farinha do Uarini</p>
-            <small>R$ 8,00</small>
-          </td>
-        </tr>
-      </table>
+        <!-- Dados principais -->
+        <ul class="list-unstyled mb-4">
+          <li><strong>Categoria:</strong> Frutas</li>
+          <li><strong>Embalagem:</strong> 1 litro</li>
+          <li><strong>Preço:</strong> R$ 15,00</li>
+        </ul>
+
+        <!-- Descrição -->
+        <p class="mb-4">
+          Polpa de açaí 100% natural, ideal para consumir com granola ou bater vitaminas.
+          Produto fresco, congelado, sem adição de açúcar, direto da região Norte.
+        </p>
+
+        <!-- Seletor de quantidade -->
+        <div class="d-flex align-items-center mb-4">
+          <label for="quantity" class="me-2 fw-semibold">Quantidade:</label>
+          <div class="input-group" style="width:120px">
+            <button class="btn btn-outline-primary" type="button" id="btn-decrease">-</button>
+            <input type="text" id="quantity" class="form-control text-center" value="1">
+            <button class="btn btn-outline-primary" type="button" id="btn-increase">+</button>
+          </div>
+        </div>
+
+        <!-- Ações -->
+        <div class="d-flex gap-3">
+          <button class="btn btn-outline-primary ">Adicionar ao Carrinho</button>
+          <button class="btn btn-primary" onclick="window.location.href='cadastro.html'"> Comprar Agora </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Produtos Semelhantes -->
+    <section class="mt-5">
+      <h3 class="mb-4">Produtos Semelhantes</h3>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Tucumã -->
+        <div class="col">
+          <div class="card h-100 shadow produto-card text-center">
+            <img src="Imagens/tucuma.jpg" class="card-img-top" alt="Frutos de tucumã cortados ao meio mostrando polpa branca envolta por casca alaranjada sobre folhas verdes" style="height:200px; object-fit:cover;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Tucumã</h5>
+              <p class="card-text flex-fill">In Natura</p>
+              <p class="fw-bold">R$ 12,00</p>
+              <a href="detalheproduto.html" class="btn btn-outline-primary mt-auto">Ver mais</a>
+            </div>
+          </div>
+        </div>
+        <!-- Guaraná Baré -->
+        <div class="col">
+          <div class="card h-100 shadow produto-card text-center">
+            <img src="Imagens/bare.png" class="card-img-top" alt="Lata amarela de Guaraná Baré 350 ml com gotas de condensação em cenário de floresta" style="height:200px; object-fit:cover;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Guaraná Baré</h5>
+              <p class="card-text flex-fill">Latinha</p>
+              <p class="fw-bold">R$ 6,00</p>
+              <a href="detalheproduto.html" class="btn btn-outline-primary mt-auto">Ver mais</a>
+            </div>
+          </div>
+        </div>
+        <!-- Farinha do Uarini -->
+        <div class="col">
+          <div class="card h-100 shadow produto-card text-center">
+            <img src="Imagens/uarini.jpeg" class="card-img-top" alt="Pacote de Farinha do Uarini ao lado de tigela cheia de farinha de mandioca em fundo de madeira" style="height:200px; object-fit:cover;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Farinha do Uarini</h5>
+              <p class="card-text flex-fill">Pacote</p>
+              <p class="fw-bold">R$ 8,00</p>
+              <a href="detalheproduto.html" class="btn btn-outline-primary mt-auto">Ver mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
-<br><br><br>
-
-   <!-- Rodapé -->
-  <footer>
-    <section>
-      <h4>Logo</h4>
-    </section>
-    <section>
-      <ul>
-        <li>Frutas</li>
-        <li>Alimentos</li>
-        <li>Bebidas</li>
-      </ul>
-    </section>
-    <section>
-      <ul>
-        <li>Entrega</li>
-        <li>Promoções</li>
-        <li>Cestas</li>
-      </ul>
-    </section>
-    <section>
-      <ul>
-        <li>Sobre Nós</li>
-        <li>Contato</li>
-        <li>Política de Privacidade</li>
-      </ul>
-    </section>
-    <p>© 2024 Minimercado Manauara. Todos os direitos reservados.</p>
+  <!-- Rodapé -->
+  <footer class="text-center p-4 bg-dark text-light">
+    <div class="row align-items-center">
+      <div class="col">
+        <a href="index.html"></a>
+        <img src="Imagens/logo3.png" alt="Logotipo do Minimercado Manauara com texto em verde e marrom e fruta estilizada à direita" width="200">
+      </div>
+      <div class="col">
+        <ul class="list-unstyled">
+          <li><a href="produtos.html" class="text-light text-decoration">Frutas</a></li>
+          <li><a href="produtos.html" class="text-light text-decoration">Alimentos</a></li>
+          <li><a href="produtos.html" class="text-light text-decoration">Bebidas</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul class="list-unstyled">
+          <li><a href="servicos.html" class="text-light text-decoration">Entrega</a></li>
+          <li>Promoções</li>
+          <li><a href="servicos.html" class="text-light text-decoration">Cestas</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul class="list-unstyled">
+           <li><a href="sobre.html" class="text-light text-decoration">Sobre Nós</a></li>
+          <li>Contato</li>
+          <li>Política de Privacidade</li>
+        </ul>
+      </div>
+    </div>
+    <p class="mt-3">© 2024 Minimercado Manauara. Todos os direitos reservados.</p>
   </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="JS/js_bootstrap/bootstrap.bundle.min.js"></script>
+  <!-- Main JavaScript -->
+  <script src="JS/main.js"></script>
 
 </body>
 </html>

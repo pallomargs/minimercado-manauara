@@ -1,107 +1,211 @@
+<!--
+  Arquivo: index.html
+  Projeto: Minimercado Manauara – Fase 2
+  Descrição: Página inicial com carrossel, destaques de produtos e navegação.
+  Autor: Palloma Rodrigues
+  Data: 16/06/2025
+-->
+
+<!-- HEADER -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Minimercado Manauara</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home - Minimercado Manauara</title>
+  
+  <!-- Bootstrap Local -->
+  <link rel="stylesheet" href="CSS/css_bootstrap/bootstrap.min.css">
+  <!-- Estilo personalizado -->
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
-<body>
 
-    <!-- Cabeçalho -->
-  <header>
-    <h1>Minimercado Manauara</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="produtos.html">Produtos</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="sobre.html">Sobre Nós</a></li>
+<body>
+  <!--Acessibilidade: Navegação por teclado-->
+  <a href="#mainContent" class="visually-hidden-focusable">Pular para o conteúdo</a>
+  
+  <!-- Cabeçalho -->
+  <header class="d-flex flex-column align-items-center p-3 bg-primary text-white">
+    <img src="Imagens/logo2.png" alt="Logotipo do Minimercado Manauara com texto em verde e marrom e fruta estilizada à direita" class="img-fluid" style="max-width:300px;">
+    <nav class="mt-2">
+      <ul class="list-unstyled d-flex gap-3">
+        <li><a href="index.html" class="text-white">Home</a></li>
+        <li><a href="produtos.html" class="text-white">Produtos</a></li>
+        <li><a href="servicos.html" class="text-white">Serviços</a></li>
+        <li><a href="sobre.html" class="text-white">Sobre Nós</a></li>
+        <li><a href="cadastro.html" class="text-white">Cadastro</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Seção de Destaque -->
-  <section>
-    <h2>Semana das Frutas Regionais</h2>
-    <p>Produtos fresquinhos, diretamente da comunidade.<br/>Temos parceria com produtores locais, incluindo famílias indígenas.</p>
-    <p><b>Confira nossas ofertas!</b></p>
-    <button>Ver Ofertas</button>
+  <!-- Carrousel de Destaques -->
+  <section class="container-fluid p-0">
+    <div id="carouselDestaques" class="carousel slide" data-bs-ride="carousel" aria-label="Destaques do Minimercado Manauara">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselDestaques" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselDestaques" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselDestaques" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="Imagens/frutas.jpg" class="d-block w-100" alt="Várias frutas sobrepostas, abacaxi, banna, morango, manga, entre outras. ">
+          <div class="carousel-caption d-block">
+            <h5 class="text-light">Semana das Frutas Regionais</h5>
+            <p class="text-light">Descontos imperdíveis!</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="Imagens/comida.jpg" class="d-block w-100" alt="Pratos tradicionais da Amazônia em cumbucas de barro sobre mesa rústica">
+          <div class="carousel-caption d-block">
+            <h5 class="text-light">Comidas Típicas</h5>
+            <p class="text-light">Sabor direto da floresta</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="Imagens/bebidas.jpg" class="d-block w-100" alt="Mesa com vários copos de shot cheios de bebidas típicas.">
+          <div class="carousel-caption d-block">
+            <h5 class="text-light">Festival de Bebidas </h5>
+            <p class="text-light">Guaraná Baré, cachaça de jambu e mais</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestaques" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselDestaques" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
+    </div>
   </section>
 
   <!-- Seção de Boas-Vindas -->
-  <section>
-  <h2>Bem-vindo ao Minimercado Manauara</h2>
-  <p>É uma alegria receber você por aqui! Nosso compromisso é oferecer produtos regionais frescos, saborosos e com aquele jeitinho manauara que só quem é da terra conhece.<br/>Explore nossas categorias, descubra sabores da Amazônia e aproveite serviços como entrega em domicílio e cestas personalizadas.<br/> Aqui você encontra tradição, praticidade e atendimento de qualidade. </p>
-  <p>Obrigado por escolher o Minimercado Manauara!</p>
+  <section class="container mt-5">
+  <!-- título centralizado -->
+  <h2 class="text-center">Bem-vindo ao Minimercado Manauara</h2>
+  <!-- parágrafos justificados -->
+  <p class="text-justify">
+    É uma alegria receber você por aqui! Nosso compromisso é oferecer produtos regionais frescos, saborosos e com aquele jeitinho manauara que só quem é da terra conhece. Explore nossas categorias, descubra sabores da Amazônia e aproveite serviços como entrega em domicílio e cestas personalizadas. Aqui você encontra tradição, praticidade e atendimento de qualidade.
+  </p>
+  <p class="text-justify">
+    Obrigado por escolher o Minimercado Manauara!
+  </p>
 </section>
 
- <br><br><br>
+  <br/>
 
   <!-- Seção de Produtos em Destaque -->
-   <h2>Produtos em Destaque</h2>
-    <table>
-      <tr>
-        <td>
-          <img src="Imagens/acai.jpg" width="150" height="150" alt= "Açaí"><br>
-          <p><strong>Açaí</strong><br>Polpa Congelada<small><br>R$ 15,00</small><br><button>Ver mais</button></p>
-          
-        </td>
-        <td>
-          <img src="Imagens/tucupi.jpg" width="150" height="150" alt="Tucupi"><br>
-          <p><strong>Tucupi</strong><br>Garrafa 500ml<small><br>R$ 10,00</small><br><button>Ver mais</button></p>
-        </td>
-        <td>
-          <img src="Imagens/bare.png" width="150" height="150" alt="Guaraná Baré"><br>
-          <p><strong>Guaraná Baré</strong><br>Latinha<small><br>R$ 6,00</small><br><button>Ver mais</button></p>
-        </td>
-      </tr>
-    </table>
-  </section>
+  <section class="container mt-5">
+  <h2>Produtos em Destaque</h2>
+  <div class="row justify-content-center gx-2 gy-4">
+
+      <!-- Card Açaí -->
+    <div class="col">
+      <div class="card h-100 shadow text-center produto-card">
+        <img src="Imagens/acai.jpg" class="card-img-top" alt="Taças de açaí natural em tigelas de madeira e colher com pó de açaí sobre esteira de palha">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Açaí</h5>
+          <p class="card-text">Polpa Congelada</p>
+          <p class="fw-bold">R$ 15,00</p>
+          <a href="detalheproduto.html" class="btn btn-outline-primary">Ver mais</a>
+        </div>
+      </div>
+    </div>
+
+      <!-- Card Tucupi -->
+      <div class="col">
+      <div class="card h-100 shadow text-center produto-card">
+        <img src="Imagens/tucupi.jpg" class="card-img-top" alt="Tigela com tucupi amarelo ao lado de raízes de mandioca sobre esteira de palha">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Tucupi</h5>
+          <p class="card-text">Garrafa 500 ml</p>
+          <p class="fw-bold">R$ 10,00</p>
+          <a href="#" class="btn btn-outline-primary">Ver mais</a>
+        </div>
+      </div>
+    </div>
+
+          <!-- Card Guaraná Baré -->
+    <div class="col">
+      <div class="card h-100 shadow text-center produto-card">
+        <img src="Imagens/bare.png" class="card-img-top" alt="Lata amarela de Guaraná Baré 350 ml com gotas de condensação em cenário de floresta">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Guaraná Baré</h5>
+          <p class="card-text">Latinha</p>
+          <p class="fw-bold">R$ 6,00</p>
+          <a href="#" class="btn btn-outline-primary">Ver mais</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
   
-   <br><br><br>
+  <br/>
 
   <!-- Seção de Serviços -->
-  <section>
-    <h2>Nossos Serviços</h2>
-    <article>
-      <h3>Entrega em domicílio</h3>
-      <p>Receba produtos em casa com agilidade.</p>
-    </article>
-    <article>
-      <h3>Montagem de cestas</h3>
-      <p>Cestas regionais com produtos selecionados.</p>
-    </article>
-  </section>
+  <section class="container mt-5 mb-5">
+  <h2 class="text mb-4">Nossos Serviços</h2>
+  <div class="row g-4">
 
-  <br><br><br>
+    <!-- Card Entrega em Domicílio -->
+    <div class="col-md-6">
+      <div class="service-card" style="background-image: url('Imagens/entrega.jpg');">
+        <div class="service-content">
+          <h3>Entrega em Domicílio</h3>
+          <p>Receba produtos em casa com agilidade.</p>
+          <a href="servicos.html" class="btn btn-primary">Saiba Mais</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Montagem de Cestas -->
+    <div class="col-md-6">
+      <div class="service-card" style="background-image: url('Imagens/cafe.webp');">
+        <div class="service-content">
+          <h3>Montagem de Cestas</h3>
+          <p>Cestas regionais com produtos selecionados.</p>
+          <a href="servicos.html" class="btn btn-primary">Saiba Mais</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
    <!-- Rodapé -->
-  <footer>
-    <section>
-      <h4>Logo</h4>
-    </section>
-    <section>
-      <ul>
-        <li>Frutas</li>
-        <li>Alimentos</li>
-        <li>Bebidas</li>
-      </ul>
-    </section>
-    <section>
-      <ul>
-        <li>Entrega</li>
-        <li>Promoções</li>
-        <li>Cestas</li>
-      </ul>
-    </section>
-    <section>
-      <ul>
-        <li>Sobre Nós</li>
-        <li>Contato</li>
-        <li>Política de Privacidade</li>
-      </ul>
-    </section>
-    <p>© 2024 Minimercado Manauara. Todos os direitos reservados.</p>
+  <footer class="text-center p-4 bg-dark text-light">
+    <div class="row align-items-center">
+      <div class="col">
+        <a href="index.html"></a>
+        <img src="Imagens/logo3.png" alt="Logotipo do Minimercado Manauara com texto em verde e marrom e fruta estilizada à direita" width="200">
+      </div>
+      <div class="col">
+        <ul class="list-unstyled">
+          <li><a href="produtos.html" class="text-light text-decoration">Frutas</a></li>
+          <li><a href="produtos.html" class="text-light text-decoration">Alimentos</a></li>
+          <li><a href="produtos.html" class="text-light text-decoration">Bebidas</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul class="list-unstyled">
+          <li><a href="servicos.html" class="text-light text-decoration">Entrega</a></li>
+          <li>Promoções</li>
+          <li><a href="servicos.html" class="text-light text-decoration">Cestas</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul class="list-unstyled">
+           <li><a href="sobre.html" class="text-light text-decoration">Sobre Nós</a></li>
+          <li>Contato</li>
+          <li>Política de Privacidade</li>
+        </ul>
+      </div>
+    </div>
+    <p class="mt-3">© 2024 Minimercado Manauara. Todos os direitos reservados.</p>
   </footer>
 
+  <!-- Bootstrap JS -->
+  <script src="JS/js_bootstrap/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,80 +1,119 @@
+<!--
+  Arquivo: servicos.html
+  Projeto: Minimercado Manauara – Fase 2
+  Descrição: Página de servições disponíveis.
+  Autor: Palloma Rodrigues
+  Data: 16/06/2025
+-->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Serviços - Minimercado Manauara</title>
+  
+  <!-- Bootstrap local -->
+  <link rel="stylesheet" href="CSS/css_bootstrap/bootstrap.min.css">
+  <!-- Estilo personalizado -->
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
+
 <body>
+<!--Acessibilidade: Navegação por teclado-->
+<a href="#mainContent" class="visually-hidden-focusable">Pular para o conteúdo</a>
 
   <!-- Cabeçalho -->
-  <header>
-    <h1>Minimercado Manauara</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="produtos.html">Produtos</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="sobre.html">Sobre Nós</a></li>
+  <header class="d-flex flex-column align-items-center p-3 bg-primary text-white">
+    <img src="Imagens/logo2.png" alt="Logotipo do Minimercado Manauara com texto em verde e marrom e fruta estilizada à direita" class="img-fluid" style="max-width:300px;">
+    <nav class="mt-2">
+      <ul class="list-unstyled d-flex gap-3">
+        <li><a href="index.html" class="text-white">Home</a></li>
+        <li><a href="produtos.html" class="text-white">Produtos</a></li>
+        <li><a href="servicos.html" class="text-white">Serviços</a></li>
+        <li><a href="sobre.html" class="text-white">Sobre Nós</a></li>
+        <li><a href="cadastro.html" class="text-white">Cadastro</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Banner -->
-  <section>
-    <h2>Facilitando o seu dia a dia com soluções rápidas e regionais</h2>
+  <section class="services-banner mb-5">
+    <div class="banner-content">
+      <h2 class="display-5">Facilitando o seu dia a dia</h2>
+      <p class="lead">Soluções rápidas e regionais para você</p>
+    </div>
   </section>
+
+  <main class="container mb-5">
+    <h2 class="mb-4">Serviços</h2>
+
 
   <!-- Serviço 1 -->
-  <section>
-    <h3>Entrega em domicílio</h3>
-    <img src="Imagens/entrega.jpg" width="450" height="300" alt="Imagem de entrega em domicílio"><br>
-    <p>
-      Realizamos entregas rápidas e seguras para bairros próximos.
-      Faça seu pedido pelo site e receba seus produtos frescos no conforto da sua casa.
-      <small><br>Preço sob consulta </small><br>
-    </p>
-    <p><button>Solicitar Entrega</button></p>
-  </section>
+  <div class="row align-items-center service-row">
+      <div class="col-md-6 service-image mb-3 mb-md-0">
+        <img src="Imagens/entrega.jpg" alt="Homem com uniforme vermelho segurando caixa com mantimentos e verduras sorrindo" class="rounded w-100">
+      </div>
+      <div class="col-md-6 service-text d-flex flex-column">
+        <h3>Entrega em Domicílio</h3>
+        <p>
+          Realizamos entregas rápidas e seguras para bairros próximos.
+          Faça seu pedido pelo site e receba seus produtos frescos no conforto da sua casa.
+        </p>
+        <a href="cadastro.html" class="btn btn-outline-primary mt-auto align-self-start">
+          Solicitar Entrega
+        </a>
+      </div>
+    </div>
 
   <!-- Serviço 2 -->
-  <section>
-    <h3>Montagem de Cestas Regionais</h3>
-    <img src="Imagens/cafe.webp" width="450" height="300" alt="Imagem de cesta regional"><br>
-    <p>
-      Cestas personalizadas com os melhores sabores da Amazônia.
-      Ideal para presentear ou montar sua própria seleção de produtos regionais.
-      <small><br>A partir de R$39,90</small><br>
-    </p>
-    <p><button>Montar Cesta</button></p>
-  </section>
+  <div class="row align-items-center service-row">
+      <div class="col-md-6 order-md-2 service-image mb-3 mb-md-0">
+        <img src="Imagens/cafe.webp" alt="Cesta de pães, frutas, queijos, geleias e flores em um cesto de vime sobre mesa clara" class="rounded w-100">
+      </div>
+      <div class="col-md-6 order-md-1 service-text d-flex flex-column">
+        <h3>Montagem de Cestas Regionais</h3>
+        <p>
+          Cestas personalizadas com os melhores sabores da Amazônia.
+          Ideal para presentear ou montar sua própria seleção de produtos regionais.
+        </p>
+        <a href="servicos.html" class="btn btn-outline-primary mt-auto align-self-start">
+          Montar Cesta
+        </a>
+      </div>
+    </div>
+  </main>
   
-  <!-- Rodapé -->
-  <footer>
-    <section>
-      <h4>Logo</h4>
-    </section>
-    <section>
-      <ul>
-        <li>Frutas</li>
-        <li>Alimentos</li>
-        <li>Bebidas</li>
-      </ul>
-    </section>
-    <section>
-      <ul>
-        <li>Entrega</li>
-        <li>Promoções</li>
-        <li>Cestas</li>
-      </ul>
-    </section>
-    <section>
-      <ul>
-        <li>Sobre Nós</li>
-        <li>Contato</li>
-        <li>Política de Privacidade</li>
-      </ul>
-    </section>
-    <p>© 2024 Minimercado Manauara. Todos os direitos reservados.</p>
+   <!-- Rodapé -->
+  <footer class="text-center p-4 bg-dark text-light">
+    <div class="row align-items-center">
+      <div class="col">
+        <a href="index.html"></a>
+        <img src="Imagens/logo3.png" alt="Logotipo do Minimercado Manauara com texto em verde e marrom e fruta estilizada à direita" width="200">
+      </div>
+      <div class="col">
+        <ul class="list-unstyled">
+          <li><a href="produtos.html" class="text-light text-decoration">Frutas</a></li>
+          <li><a href="produtos.html" class="text-light text-decoration">Alimentos</a></li>
+          <li><a href="produtos.html" class="text-light text-decoration">Bebidas</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul class="list-unstyled">
+          <li><a href="servicos.html" class="text-light text-decoration">Entrega</a></li>
+          <li>Promoções</li>
+          <li><a href="servicos.html" class="text-light text-decoration">Cestas</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul class="list-unstyled">
+           <li><a href="sobre.html" class="text-light text-decoration">Sobre Nós</a></li>
+          <li>Contato</li>
+          <li>Política de Privacidade</li>
+        </ul>
+      </div>
+    </div>
+    <p class="mt-3">© 2024 Minimercado Manauara. Todos os direitos reservados.</p>
   </footer>
 
 </body>

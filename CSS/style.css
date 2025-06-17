@@ -1,0 +1,343 @@
+/*
+  Arquivo: style.css
+  Projeto: Minimercado Manauara – Fase 2
+  Descrição: Alterações css
+  Autor: Palloma Rodrigues
+  Data: 16/06/2025
+*/
+
+
+/* ============== VARIÁVEIS DE TEMA ========== */
+
+:root {
+  /* Cores Mimercado Manauara */
+  --bs-body-bg:        #F2E5D5;      /* bege fundo geral */
+  --bs-primary:        #A6381F;      /* vermelho terra (cor principal */
+  --bs-primary-rgb:    166, 56, 31;
+  --bs-danger:         #D97941;      /* laranja (cor auxiliar) */
+  --bs-danger-rgb:     217, 121, 65;          
+  --bs-dark:           #5A3E36;      /* marrom (cor auxiliar) */
+  --bs-dark-rgb:       90, 62, 54;     
+  --bs-light:          #F2E5D5;      /* bege claro */
+  --bs-light-rgb:      242, 229, 213;          
+}
+
+/* ============= ESTILOS GLOBAIS  =========== */
+body {
+  background-color: var(--bs-body-bg);
+}
+.container {
+  max-width: 920px !important;
+}
+.text-justify {
+  text-align: justify !important;
+}
+
+
+/* =============== BOTÕES ====================== */
+/* Botão Principal (vermelho-terra) */
+.btn-primary {
+  background-color: var(--bs-primary) !important;
+  border-color: var(--bs-primary) !important;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #912f24 !important;/* tom mais escuro */
+  border-color: #912f24 !important;
+}
+
+/* Botão Principal outline (vermelho-terra) */
+.btn-outline-primary {
+  color: var(--bs-primary) !important;        
+  border-color: var(--bs-primary) !important; 
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: var(--bs-primary) !important; 
+  color: var(--bs-light) !important;              
+  border-color: var(--bs-primary) !important;
+}
+
+/* ================ ACESSBILIDADE ============ */
+.visually-hidden-focusable {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--bs-primary);
+  color: #fff;
+  padding: 8px;
+  z-index: 1000;
+  transition: top .3s;
+}
+.visually-hidden-focusable:focus {
+  top: 0;
+}
+
+/* ============ FORMULÁRIOS E INPUTS ============ */
+.form-control {
+  border: 1px solid var(--bs-dark);
+  background-color: #fff;
+  border-radius: 8px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.form-control:focus {
+  border-color: var(--bs-primary) !important;
+  box-shadow: 0 0 0 3.2px rgba(var(--bs-primary-rgb), 0.25) !important;
+}
+::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+.form-check-input {
+  border-color: var(--bs-dark);
+}
+.form-check-input:checked {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+.form-check-input:focus {
+  box-shadow: 0 0 0 3.2px rgba(var(--bs-primary-rgb), 0.25);
+}
+input[type="date"],
+input[type="datetime-local"],
+input[type="time"] {
+  accent-color: var(--bs-primary);
+}
+input[type="datetime-local"] {
+  border: 1px solid var(--bs-dark);
+  border-radius: 8px;
+}
+input[type="datetime-local"]:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 3.2px rgba(var(--bs-primary-rgb), .25);
+}
+
+
+/* ======= CARROUSEL DE DESTAQUES (index.thml) ======= */
+#carouselDestaques .carousel-item {
+  position: relative;
+  height: 300px;
+}
+
+/* cobre todo o container sem distorcer */
+#carouselDestaques .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* overlay escuro para melhorar contraste */
+#carouselDestaques .carousel-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* captions acima do overlay */
+#carouselDestaques .carousel-caption {
+  display: block !important;
+  position: absolute;
+  bottom: 60px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  max-width: 50%;
+  z-index: 2;
+  color: #fff !important;
+}
+
+/* Títulos maiores */
+#carouselDestaques .carousel-caption h5 {
+  font-size: 40px !important;
+  font-weight: 700;
+}
+
+/* Descrições maiores */
+#carouselDestaques .carousel-caption p {
+  font-size: 20px !important;
+  margin-top: 8px;
+}
+
+/* ====== PRODUTOS (produtos.html, detalheproduto.html) ====== */
+/*Card Produto*/
+.produto-card {
+  max-width: 320px;
+  margin: auto;
+}
+/* Card - imagem cobre toda a largura e mantem proporção */
+.produto-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+/* sidebar e categorias */
+.list-group-item.active {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  color: #fff;
+}
+
+/* === Banner de Produtos (produtos.html) === */
+.produtos-banner {
+  position: relative;
+  background-image: url('../Imagens/manaus.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.produtos-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.produtos-banner .banner-content {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+}
+
+/* === SERVIÇOS (servicos.html) === */
+/* Banner de servicos (servicos.html)  */
+.services-banner {
+  position: relative;
+  background-image: url('../Imagens/servicos.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.services-banner .banner-content {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+}
+
+.service-row {
+  margin-bottom: 40px;
+}
+
+/* Card Serviços */
+.service-card {
+  position: relative;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* Conteúdo Serviços*/
+.service-content {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  background: var(--bs-light);
+  padding: 8px 12px;
+  border-radius: 8px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.service-content h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+.service-content p {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.service-content .btn {
+  font-size: 13.6px;
+  padding: 6px 12px;
+  align-self: flex-start;
+}
+
+/* ========= SOBRE NÓS (sobre.html) ======= */
+/* Banner sobre nós */
+.sobre-banner {
+  position: relative;
+  background-image: url('../Imagens/sobre.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sobre-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+.sobre-banner .banner-content {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+}
+
+/*Consteúdo Sobre Nós */
+.content-block {
+  background: var(--bs-danger);
+  padding: 16px;
+  border-radius: 8px;
+}
+.content-block-dark {
+  background: var(--bs-dark);
+  color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+}
+.content-block h3,
+.content-block-dark h3 {
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+.content-block p,
+.content-block-dark p {
+  margin-bottom: 16px;
+}
+.content-block-dark .btn-outline-light:hover {
+  background: #fff;
+  color: var(--bs-dark);
+}
+
+/* ======== FORMULÁRIO DE CADASTRO (cadastro.html) ========= */
+/* Reaproveita formulários gerais e inputs */
+
+/* === FIM DO STYLE.CSS === */
