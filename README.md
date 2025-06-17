@@ -35,4 +35,4 @@ Este projeto apresenta um site responsivo que permite ao usuário:
 ## Como Executar Localmente
 1. Faça clone deste repositório: https://github.com/pallomargs/minimercado-manauara.git
 
-2. Para visualizar, abara o site: 
+2. Para visualizar, abara o site: https://pallomargs.github.io/minimercado-manauara/
